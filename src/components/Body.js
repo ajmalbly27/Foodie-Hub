@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //Local State Variable - Super powerful variable
@@ -22,12 +23,10 @@ const Body = () => {
 
     //use in case of trying to bypass cors policy without using cors chrome plugin
     // const data = await fetch(
-    //   "https://corsproxy-la3g.onrender.com/full/?url=https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9352403&lng=77.624532&str=Biryani&trackingId=undefined&submitAction=ENTER&queryUniqueId=30b92518-9086-a42b-8938-90eb3f317fe0&selectedPLTab=RESTAURANT"
+    //   "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9352403&lng=77.624532&str=Biryani&trackingId=undefined&submitAction=ENTER&queryUniqueId=30b92518-9086-a42b-8938-90eb3f317fe0&selectedPLTab=RESTAURANT"
     // );
 
     const json = await data.json();
-
-    console.log(json);
 
     setListOfRestaurants(
       json?.data?.cards[0]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards
@@ -70,10 +69,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard
+          <Link
             key={restaurant.card.card.info.id}
-            resData={restaurant}
-          />
+            to={"/restaurants/" + restaurant.card.card.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

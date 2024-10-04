@@ -1,4 +1,4 @@
-# Food Ordering App (Swiggy Clone)
+# Foodie Hub (Swiggy Clone)
 
 ## Description
 
@@ -44,9 +44,9 @@ Check out the live demo of the app [here](https://your-demo-url.com).
 ## Screenshots
 
 Here are some screenshots of the app in action:
-![Home Page](https://github.com/ajmalbly27/react-news-app-inshorts-clone/blob/main/public/screenshots/home-page.png)
-![Menu Page](https://github.com/ajmalbly27/react-news-app-inshorts-clone/blob/main/public/screenshots/menu-page.png)
-![Cart Page](https://github.com/ajmalbly27/react-news-app-inshorts-clone/blob/main/public/screenshots/cart-page.png)
+![Home Page](https://github.com/ajmalbly27/Foodie-Hub/blob/main/public/screenshots/home-page.png)
+![Menu Page](https://github.com/ajmalbly27/Foodie-Hub/blob/main/public/screenshots/menu-page.png)
+![Cart Page](https://github.com/ajmalbly27/Foodie-Hub/blob/main/public/screenshots/cart-page.png)
 
 ## Installation Instructions
 

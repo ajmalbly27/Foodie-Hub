@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import ItemList from "./ItemList";
+import CartItemList from "./CartItemList";
 import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
@@ -13,9 +13,9 @@ const Cart = () => {
   };
 
   return (
-    <div className="text-center m-4 p-4">
+    <div className="text-center m-4 p-4 min-h-[70vh]">
       <h1 className="text-2xl font-bold">Cart</h1>
-      <div className="w-6/12 m-auto">
+      <div className="m-auto sm:w-9/12 lg:w-6/12">
         <button
           className="p-2 m-2 bg-black text-white rounded-lg"
           onClick={handleClearCart}
@@ -25,7 +25,7 @@ const Cart = () => {
         {cartItems.length === 0 && (
           <h1>Cart is empty. Add Items to the cart!</h1>
         )}
-        <ItemList items={cartItems} />
+        <CartItemList items={cartItems} />
       </div>
     </div>
   );

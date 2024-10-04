@@ -82,20 +82,6 @@ const Body = () => {
           }}
         />
         <IoSearch className="text-xl text-gray-600" />
-        {/* <button
-          className="bg-white"
-          onClick={() => {
-            console.log(searchText);
-
-            const filteredRestaurant = listOfRestaurants.filter((res) =>
-              res.info.name.toLowerCase().includes(searchText.toLowerCase())
-            );
-
-            setFilteredRestaurant(filteredRestaurant);
-          }}
-        >
-          Search
-        </button> */}
       </div>
 
       <Cuisines cuisinesObj={dataObject?.cards[0]?.card?.card} />

@@ -13,35 +13,21 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  console.log("Body rendered");
-
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     // const data = await fetch(
-    //   "https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9352403&lng=77.624532&str=Biryani&trackingId=undefined&submitAction=ENTER&queryUniqueId=30b92518-9086-a42b-8938-90eb3f317fe0&selectedPLTab=RESTAURANT"
+    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     // );
-
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
 
     //use in case of trying to bypass cors policy without using cors chrome plugin
-    // const data = await fetch(
-    //   "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9352403&lng=77.624532&str=Biryani&trackingId=undefined&submitAction=ENTER&queryUniqueId=30b92518-9086-a42b-8938-90eb3f317fe0&selectedPLTab=RESTAURANT"
-    // );
+    const data = await fetch(
+      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
 
     const json = await data.json();
-    console.log(json);
-
-    // setListOfRestaurants(
-    //   json?.data?.cards[0]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards
-    // );
-    // setFilteredRestaurant(
-    //   json?.data?.cards[0]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards
-    // );
 
     setDataObject(json?.data);
 
